@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мозгобойня</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 1200px;
+        }
+        .title {
+            font-weight: 600;
+            font-size: 52px;
+            line-height: 101%;
+            letter-spacing: -3%;
+            text-align: left;
+            width: 1200px;
+            height: 106px;
+            margin-top: 221px;
+        }
+        .date {
+            font-weight: 500;
+            font-size: 28px;
+            line-height: 101%;
+            letter-spacing: -3%;
+            text-align: left;
+            width: 187px;
+            height: 28px;
+            margin-top: 34px;
+        }
+        .content-container {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 1200px;
+			margin-top: 34px;
+			flex-direction: row-reverse;
+		}
+        .description {
+            font-weight: 400;
+            font-size: 25px;
+            line-height: 101%;
+            letter-spacing: -3%;
+            text-align: left;
+            width: 588px;
+            height: 547px;
+        }
+        .image img {
+            width: 591px;
+            height: 443px;
+        }
+        .buttons {
+            display: flex;
+            align-items: center;
+            margin-top: 70px;
+        }
+        .button {
+            display: inline-block;
+            background: #007AFF;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .button.large {
+            width: 997px;
+            height: 76px;
+        }
+        .button.small {
+            width: 76px;
+            height: 76px;
+            margin-left: 20px;
+            position: relative;
+        }
+        .button.small img {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">На ФЦЭ прошла долгожданная мозгобойня "Каждый день как праздник"</div>
+        <div class="date">17 марта 2025</div>
+    </div>
+    
+    <div class="content-container">
+        <div class="description">
+            13 марта на ФЦЭ прошла долгожданная мозгобойня "Каждый день праздник"!<br>
+            Ребята воспользовались возможностью проверить свои знания во многих сферах: от Всемирного женского дня (8 марта) до дня выхода человека в открытый космос (18 марта) и театра (27 марта).<br>
+            И, конечно же, победители не ушли без призов, отличного настроения, заевших в голове песен после музыкальной паузы и уставшего от смеха живота!<br><br>
+            Места распределились так:<br>
+            1 место — "Экспертная система"<br>
+            2 место — "ДЦКАНЫ"<br>
+            3 место — "Пэкмэки"<br><br>
+            Ждем вас на наших следующих мероприятиях и безмерно благодарим за атмосферу на этой мозгобойне!<br><br>
+            С любовью, Студсовет и Профбюро ФЦЭ
+        </div>
+        <div class="image">
+            <img src="news.jfif" alt="Мозгобойня">
+        </div>
+    </div>
+    
+    <div class="buttons">
+        <a href="https://www.instagram.com" class="button large">Узнать больше</a>
+        <a href="https://t.me" class="button small"><img src="telegram.png" alt="Telegram"></a>
+        <a href="https://www.instagram.com" class="button small"><img src="instagram.png" alt="Instagram"></a>
+    </div>
+</body>
+</html>

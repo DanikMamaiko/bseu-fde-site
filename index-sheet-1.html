@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Данные из Google Sheets</title>
+</head>
+<body>
+    <h2>Данные из таблицы</h2>
+    <ul id="data-list"></ul>
+
+    <h2>Тест изображения</h2>
+    <img id="test-image" alt="Тестовое изображение" style="max-width: 300px; display: block;">
+
+    <script>
+        async function fetchData() {
+            const sheetId = '1yxUnhszhwgtZF1iTT3kMu2IOEP5fLBJYJzV9J96w6pw'; // ID вашей таблицы
+            const apiKey = 'AIzaSyBOnZH_HH_pvBuhbi9Zurz2dh6nZt6yV-A'; // API ключ
+            const range = 'A1:D5'; // Диапазон данных
+            const url = `https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/${range}?key=${apiKey}`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                if (data.values) {
+                    displayData(data.values);
+                } else {
+                    document.getElementById('data-list').innerHTML = '<li>Нет данных</li>';
+                }
+            } catch (error) {
+                console.error('Ошибка при получении данных:', error);
+            }
+        }
+
+        function displayData(rows) {
+            const list = document.getElementById('data-list');
+            list.innerHTML = '';
+
+            rows.forEach(row => {
+                const li = document.createElement('li');
+
+                row.forEach(cell => {
+                    // Если ячейка содержит ссылку на Google Drive
+                    if (cell.includes('drive.google.com')) {
+                        const img = document.createElement('img');
+                        img.src = convertGoogleImageLink(cell); // Преобразуем ссылку
+                        img.style.maxWidth = '200px'; // Размер изображения
+                        img.style.display = 'block';
+                        li.appendChild(img);
+                    } else {
+                        li.innerHTML += cell + ' | '; // Обычный текст
+                    }
+                });
+
+                list.appendChild(li);
+            });
+        }
+
+        function convertGoogleImageLink(url) {
+			const match = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+			return match ? `https://drive.google.com/thumbnail?id=${match[1]}&sz=w1000` : url;
+		}
+
+        window.onload = function() {
+            const originalUrl = "https://drive.google.com/file/d/1rvZsF_RItS0U-F25Z_UVoicedQaybW0x/view?usp=sharing"; 
+            const imageElement = document.getElementById("test-image");
+            imageElement.src = convertGoogleImageLink(originalUrl);
+            fetchData();
+        };
+    </script>
+</body>
+</html>

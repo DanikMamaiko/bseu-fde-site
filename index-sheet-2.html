@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конвертер ссылок Google Drive</title>
+</head>
+<body>
+
+    <h2>Введите ссылку на Google Drive</h2>
+    <input type="text" id="drive-url" placeholder="Вставьте ссылку">
+    <button onclick="convertAndShow()">Преобразовать</button>
+
+    <h3>Результат:</h3>
+    <img id="image-preview" style="max-width: 300px; display: block; margin-top: 10px;">
+
+    <script>
+        function convertDriveLink(url) {
+            const match = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
+            return match ? `https://drive.google.com/thumbnail?id=${match[1]}&sz=w1000` : url;
+        }
+
+        function convertAndShow() {
+            const input = document.getElementById("drive-url").value;
+            const convertedUrl = convertDriveLink(input);
+            document.getElementById("image-preview").src = convertedUrl;
+        }
+    </script>
+
+</body>
+</html>
