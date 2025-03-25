@@ -15,6 +15,41 @@
             align-items: center;
             background: white;
         }
+		
+		.header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 1200px;
+			padding: 20px 0;
+			margin-top: 51px;
+		}
+		
+		.nav {
+			display: flex;
+			gap: 40px;
+		}
+
+		.nav a {
+			font-weight: 600;
+			font-size: 18px;
+			line-height: 101%;
+			letter-spacing: -3%;
+			text-decoration: none;
+			color: black;
+			text-align: center;
+			color: #007AFF;
+		}
+
+		.nav a:hover {
+			color: black;
+		}
+
+		.logo img {
+			width: 144px;
+			height: 38px;
+		}
+		
         .container {
             display: flex;
             flex-direction: column;
@@ -29,7 +64,7 @@
             text-align: left;
             width: 1200px;
             height: 106px;
-            margin-top: 221px;
+            margin-top: 51px;
         }
         .date {
             font-weight: 500;
@@ -99,9 +134,82 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
+		
+		.footer {
+            width: 1440px;
+            height: 530px;
+            background: linear-gradient(97.19deg, #0094FF 0.78%, #005999 99.22%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+            color: white;
+            text-align: left;
+        }
+        .footer-container {
+            width: 1203px;
+            height: 404px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 30px;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* Уменьшены отступы */
+        }
+        .footer-column h3 {
+            font-weight: 600;
+            font-size: 25px;
+            color: white;
+        }
+        .footer-column p, .footer-column a {
+            font-weight: 500;
+            font-size: 22px;
+            text-decoration: none;
+            color: white;
+        }
+        .footer-bottom {
+            text-align: center;
+            font-weight: 500;
+            font-size: 22px;
+            color: white;
+            margin-top: 30px;
+        }
+		.footer-column-1 {
+			width: 385px;
+			margin-left: 20px; 
+		}
+		/*.footer-column-2 {
+			width: 385px;
+			margin-left: 630px; 
+		} */
+		.footer-column-3 {
+			width: 385px;
+		}
+    </style>
     </style>
 </head>
 <body>
+	<header class="header">
+        <div class="logo">
+            <img src="blue-logo-fde.png" alt="Логотип ФЦЭ">
+        </div>
+        <nav class="nav">
+            <a href="#">О факультете</a>
+            <a href="#">Студенту</a>
+            <a href="#">Абитуриенту</a>
+            <a href="#">Наука</a>
+            <a href="#">Кафедры</a>
+        </nav>
+    </header>
+	
     <div class="container">
         <div class="title">На ФЦЭ прошла долгожданная мозгобойня "Каждый день как праздник"</div>
         <div class="date">17 марта 2025</div>
@@ -129,5 +237,33 @@
         <a href="https://t.me" class="button small"><img src="telegram.png" alt="Telegram"></a>
         <a href="https://www.instagram.com" class="button small"><img src="instagram.png" alt="Instagram"></a>
     </div>
+	
+	<footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-column footer-column-1">
+                    <p>Если у Вас возникли вопросы, обращайтесь по адресу <strong>fde@bseu.by</strong></p>
+                    <div style="width: 186px; height: 181px; background: white;"></div>
+                    <p>Если есть предложения, можете написать нам</p>
+                </div>
+                <div class="footer-column footer-column-2">
+                    <h3>Ссылки</h3>
+                    <a href="#">О факультете</a>
+                    <a href="#">Студенту</a>
+                    <a href="#">Абитуриенту</a>
+                    <a href="#">Наука</a>
+                    <a href="#">Кафедры</a>
+                    <a href="#">Карта сайта</a>
+                </div>
+                <div class="footer-column footer-column-3">
+                    <h3>Контакты</h3>
+                    <p>+375(**) 209-52-45</p>
+                    <p>fdebseu@gmail.com</p>
+                    <p>220070, г. Минск, пр. Партизанский 26, корпус 1, ауд. 120</p>
+                </div>
+            </div>
+            <div class="footer-bottom">© 2019-2025 БГЭУ ФЦЭ</div>
+        </div>
+    </footer>
 </body>
 </html>
