@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сверстанная страница</title>
+  <style>
+    body {
+		font-family: 'Montserrat', sans-serif;
+		margin: 0;
+		padding: 0;
+		background: white;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+    }
+
+    .container {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		width: 1200px;
+		position: relative; /* Нужно для позиционирования блоков относительно контейнера */
+    }
+
+    .block {
+      position: absolute;
+      border: 2px solid #000; 
+      box-sizing: border-box;
+    }
+
+    /* Строка 1 */
+    .block1-1 {
+      width: 791px;
+      height: 345px;
+      top: 316px;
+      left: 119px;
+    }
+
+    .block1-2 {
+      width: 386px;
+      height: 345px;
+      top: 316px;
+      left: 934px;
+    }
+
+    /* Строка 2 */
+    .block2-1 {
+      width: 386px;
+      height: 345px;
+      top: 681px;
+      left: 117px;
+    }
+
+    .block2-2 {
+      width: 386px;
+      height: 345px;
+      top: 681px;
+      left: 524px;
+    }
+
+    .block2-3 {
+      width: 386px;
+      height: 345px;
+      top: 681px;
+      left: 934px;
+    }
+
+    /* Строка 3 */
+    .block3-1 {
+      width: 386px;
+      height: 345px;
+      top: 1046px;
+      left: 117px;
+    }
+
+    .block3-2 {
+      width: 794px;
+      height: 345px;
+      top: 1046px;
+      left: 526px;
+    }
+
+    /* Строка 4 */
+    .block4-1 {
+      width: 386px;
+      height: 345px;
+      top: 1411px;
+      left: 117px;
+    }
+
+    .block4-2 {
+      width: 386px;
+      height: 345px;
+      top: 1411px;
+      left: 524px;
+    }
+
+    .block4-3 {
+      width: 386px;
+      height: 345px;
+      top: 1411px;
+      left: 934px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Строка 1 -->
+    <div class="block block1-1"></div>
+    <div class="block block1-2"></div>
+
+    <!-- Строка 2 -->
+    <div class="block block2-1"></div>
+    <div class="block block2-2"></div>
+    <div class="block block2-3"></div>
+
+    <!-- Строка 3 -->
+    <div class="block block3-1"></div>
+    <div class="block block3-2"></div>
+
+    <!-- Строка 4 -->
+    <div class="block block4-1"></div>
+    <div class="block block4-2"></div>
+    <div class="block block4-3"></div>
+  </div>
+
+</body>
+</html>
