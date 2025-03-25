@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мозгобойня</title>
-    <link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="style.css">
     <style>
+		  /* ================= HEADER ================= */
         body {
             font-family: 'Montserrat', sans-serif;
             margin: 0;
@@ -50,6 +52,7 @@
 			height: 38px;
 		}
 		
+		  /* ================= CONTENT ================= */
         .container {
             display: flex;
             flex-direction: column;
@@ -72,18 +75,20 @@
             line-height: 101%;
             letter-spacing: -3%;
             text-align: left;
-            width: 187px;
+            width: 287px;
             height: 28px;
             margin-top: 34px;
         }
+		
         .content-container {
 			display: flex;
-			align-items: center;
+			align-items: flex-start;
 			justify-content: space-between;
 			width: 1200px;
 			margin-top: 34px;
 			flex-direction: row-reverse;
 		}
+		
         .description {
             font-weight: 400;
             font-size: 25px;
@@ -93,15 +98,19 @@
             width: 588px;
             height: 547px;
         }
+		
         .image img {
             width: 591px;
             height: 443px;
+			object-fit: cover;
         }
+		
         .buttons {
             display: flex;
             align-items: center;
             margin-top: 70px;
         }
+		
         .button {
             display: inline-block;
             background: #007AFF;
@@ -116,16 +125,19 @@
             justify-content: center;
             position: relative;
         }
+		
         .button.large {
             width: 997px;
             height: 76px;
         }
+		
         .button.small {
             width: 76px;
             height: 76px;
             margin-left: 20px;
             position: relative;
         }
+		
         .button.small img {
             width: 40px;
             height: 40px;
@@ -135,9 +147,11 @@
             transform: translate(-50%, -50%);
         }
 		
+		/* ================= FOOTER ================= */
+		
 		.footer {
             width: 1440px;
-            height: 530px;
+            height: 620px;
             background: linear-gradient(97.19deg, #0094FF 0.78%, #005999 99.22%);
             display: flex;
             justify-content: center;

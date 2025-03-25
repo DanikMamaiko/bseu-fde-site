@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты</title>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+    
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			display: flex;
+			justify-content: center; 
+		}
+
+		.container {
+			max-width: 1200px; 
+			width: 100%;
+		}
+		
+		.contacts {
+			width: 254px;
+			height: 53px;
+			top: 221px;
+			left: 120px;
+			font-family: Montserrat;
+			font-weight: 600px;
+			font-size: 52px;
+			line-height: 101%;
+			letter-spacing: -3%;
+			vertical-align: middle;
+			color: #2E3146;
+		}
+		
+		.deans {
+			display: flex;
+			justify-content: flex-start; 
+			gap: 180px;
+		}
+		
+		.deans p {
+			width: 67px;
+			height: 22px;
+			top: 669px;
+			left: 120px;
+			font-family: Montserrat;
+			font-weight: 500px;
+			font-size: 22px;
+			line-height: 101%;
+			letter-spacing: -3%;
+			vertical-align: middle;
+			color: background: #2E3146;
+		}
+		
+		.dean-image {
+			width: 300px;
+			height: 300px;
+			top: 354px;
+			left: 120px;
+			background-color: #D9D9D9;
+		}
+		
+		.dean-title p {
+			width: 559px;
+			height: 28px;
+			top: 706px;
+			left: 120px;
+			font-family: Montserrat;
+			font-weight: 600px;
+			font-size: 28px;
+			line-height: 101%;
+			letter-spacing: -3%;
+			vertical-align: middle;
+			color:  #0094FF;
+		}
+		
+		dean {
+			
+		}
+		
+		.zamdean {
+			
+		}
+		
+		.address {
+			display: flex;
+			justify-content: flex-start; 
+			gap: 200px;
+		}
+		
+		.address p {
+			width: 221px;
+			height: 22px;
+			top: 762px;
+			left: 458px;
+			font-family: Montserrat;
+			font-weight: 500px;
+			font-size: 22px;
+			line-height: 101%;
+			letter-spacing: -3%;
+			vertical-align: middle;
+			color: #2E3146;
+		}
+		
+		.address-title {
+			width: 430px;
+			height: 44px;
+			top: 820px;
+			left: 120px;
+			font-family: Montserrat;
+			font-weight: 500px;
+			font-size: 22px;
+			line-height: 101%;
+			letter-spacing: -3%;
+			vertical-align: middle;
+			color: #2E3146;
+		}
+		
+		.location {
+			width: 485px;
+			height: 53px;
+			top: 1030px;
+			left: 120px;
+			font-family: Montserrat;
+			font-weight: 600;
+			font-size: 52px;
+			line-height: 101%;
+			letter-spacing: -3%;
+			vertical-align: middle;
+			color: #0094FF;
+		}
+		
+		.location-image {
+			width: 1200px;
+			height: 481px;
+			top: 1095px;
+			left: 120px;
+			background-color: #D9D9D9;
+		}
+		
+		.dog {
+			font-family: Montserrat;
+			font-size: 250px; 
+			font-weight: bold;
+			background: linear-gradient(244.42deg, #007AFF 8.73%, #60C4F4 91.27%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			display: inline-block;
+
+			position: absolute; 
+			width: 297.4px; /* Округлил, так как дробные px не критичны */
+			height: 303.2px; 
+			top: 505.51px; 
+			left: 1157px;
+
+			transform: rotate(26.46deg); 
+			z-index: 999; /* Поднимаем над всеми элементами */
+			pointer-events: none; /* Чтобы элемент не мешал кликам */
+		}
+
+    </style>
+</head>
+
+	<body>
+		
+		<div class="container"> 
+			<div class="contacts">
+				<p>Контакты</p>
+			</div>
+			
+			<div class="deans">
+				<div class="dean">
+					<div class="dean-image">
+						<img src="" alt="">
+					</div>
+					<p>декан</p>
+					<div class="dean-title">
+						<p>Майоровская Светлана Владимировна</p>
+					</div>
+				</div>
+				
+				<div class="zamdean">
+					<div class="dean-image">
+						<img src="" alt="">
+					</div>
+					<p>заместитель декана</p>
+					<div class="dean-title">
+						<p>Прыгун Ирина Владимировна</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="address">
+			
+				<p>+375(**) 209-52-45</p>
+				<p>fdebseu@gmail.com</p>
+			
+			</div>
+			
+			<div class="address-title">
+					<p>220070, г. Минск, пр. Партизанский 26,<br>корпус 1, ауд. 120*</p>
+			</div>
+			
+			<div class="dog">@</div>
+
+			
+			
+			<div class="location">
+				<p>Как добраться</p>
+				<div class="location-image">
+						<img src="location.png" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>

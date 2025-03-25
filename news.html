@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            min-height: 200vh;
+        }
+        
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            padding-bottom: 100px;
+        }
+        
+        .news-title {
+            margin-top: 65px;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            color: #2E3146;
+            font-size: 52px;
+            font-weight: 600;
+            line-height: 52.69px;
+            width: 226px;
+            height: 53px;
+        }
+        
+        .news-row {
+            display: flex;
+            margin-top: 42px;
+            gap: 24px;
+        }
+        
+        .news-row-bottom {
+            display: flex;
+            margin-top: 20px;
+            gap: 24px;
+        }
+        
+        .news-item-large {
+            width: 792px;
+            height: 345px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .news-item {
+            width: 386px;
+            height: 345px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .news-bg {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+        
+        .news-bg-gray {
+            background: #D9D9D9;
+        }
+        
+        .news-bg-light {
+            background: #F5F5F5;
+        }
+        
+        .news-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+        }
+        
+        .news-image-large {
+            width: 794px;
+            height: 527px;
+            position: absolute;
+            left: -2px;
+            top: -118px;
+            object-fit: cover;
+        }
+        
+        .news-image-small {
+            width: 578px;
+            height: 374px;
+            position: absolute;
+            left: -83px;
+            top: 0;
+            object-fit: cover;
+        }
+        
+        .gradient-overlay {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0.17%, #171717 99.83%);
+        }
+        
+        .gradient-overlay-small {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0.17%, #171717 99.83%);
+        }
+        
+        .news-title-large {
+            width: 732px;
+            left: 30px;
+            top: 173px;
+            position: absolute;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 32.43px;
+            z-index: 2;
+        }
+        
+        .news-title-regular {
+            width: 326px;
+            left: 30px;
+            top: 128px;
+            position: absolute;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 32.43px;
+            z-index: 2;
+        }
+        
+        .news-date {
+            left: 30px;
+            top: 298px;
+            position: absolute;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            font-size: 17px;
+            font-weight: 500;
+            line-height: 17.23px;
+            z-index: 2;
+        }
+        
+        .news-item:not(:has(img)) .news-title-large,
+        .news-item:not(:has(img)) .news-title-regular,
+        .news-item:not(:has(img)) .news-date {
+            color: #2E3146;
+        }
+        
+        .news-item:has(img) .news-bg {
+            display: none;
+        }
+        
+        .news-item:not(:has(img)) .news-image,
+        .news-item:not(:has(img)) .gradient-overlay,
+        .news-item:not(:has(img)) .gradient-overlay-small {
+            display: none;
+        }
+        
+        .news-item-large:has(img) .news-title-large,
+        .news-item-large:has(img) .news-date {
+            color: white;
+        }
+        
+        .news-item:has(img) .news-title-regular,
+        .news-item:has(img) .news-date {
+            color: #9AC2DF;
+        }
+        
+        .news-item:nth-child(2) .news-title-regular,
+        .news-item:nth-child(5) .news-title-regular {
+            color: #0094FF;
+            font-family: Montserrat;
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 101.336%;
+            letter-spacing: -0.96px;
+        }
+        
+        .all-news-link {
+            display: flex;
+            align-items: center;
+            margin-top: 24px;
+            cursor: pointer;
+        }
+        
+        .all-news-text {
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            color: #0094FF;
+            font-size: 25px;
+            font-weight: 500;
+            line-height: 25.33px;
+        }
+        
+        .arrow-icon {
+            margin-left: 10px;
+            width: 20px;
+            height: 20px;
+        }
+        
+        /* Стили для кастомной кнопки прокрутки вверх */
+        .scroll-to-top {
+            width: 100px;
+            height: 100px;
+            position: fixed;
+            right: calc(50% - 600px);
+            bottom: 20px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            display: none;
+            z-index: 1000;
+            transition: opacity 0.3s;
+            opacity: 0.9;
+            padding: 0;
+        }
+        
+        .scroll-to-top:hover {
+            opacity: 1;
+        }
+        
+        .scroll-to-top img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .scroll-to-top.visible {
+            display: block;
+        }
+        
+        .news-content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="news-title">Новости</div>
+        
+        <div class="news-row">
+            <div class="news-item-large">
+                <div class="news-content">
+                    <div class="news-bg news-bg-gray"></div>
+                    <img class="news-image-large" src="https://placehold.co/794x527" alt="Новость">
+                    <div class="gradient-overlay"></div>
+                    <div class="news-title-large">На ФЦЭ прошла долгожданная мозгобойня "Каждый день праздник"</div>
+                    <div class="news-date">17 марта 2025</div>
+                </div>
+            </div>
+            
+            <div class="news-item">
+                <div class="news-content">
+                    <div class="news-bg news-bg-light"></div>
+                    <div class="news-title-regular">Самый нежный и утонченный конкурс этой весны-Мисс-БГЭУ</div>
+                    <div class="news-date">17 марта 2025</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="news-row-bottom">
+            <div class="news-item">
+                <div class="news-content">
+                    <div class="news-bg news-bg-light"></div>
+                    <div class="news-title-regular">Самый нежный и утонченный конкурс этой весны-Мисс-БГЭУ</div>
+                    <div class="news-date" style="left: 31px">17 марта 2025</div>
+                </div>
+            </div>
+            
+            <div class="news-item">
+                <div class="news-content">
+                    <div class="news-bg news-bg-light"></div>
+                    <img class="news-image-small" src="https://placehold.co/578x374" alt="Новость">
+                    <div class="gradient-overlay-small"></div>
+                    <div class="news-title-regular">Самый нежный и утонченный конкурс этой весны-Мисс-БГЭУ</div>
+                    <div class="news-date">14 марта 2025</div>
+                </div>
+            </div>
+            
+            <div class="news-item">
+                <div class="news-content">
+                    <div class="news-bg news-bg-light"></div>
+                    <div class="news-title-regular">Самый нежный и утонченный конкурс этой весны-Мисс-БГЭУ</div>
+                    <div class="news-date">17 марта 2025</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="all-news-link">
+            <div class="all-news-text">Все новости</div>
+            <svg class="arrow-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.1665 10H15.8332" stroke="#0094FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10 4.16669L15.8333 10L10 15.8334" stroke="#0094FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        
+        <!-- Кнопка прокрутки вверх с кастомным изображением -->
+        <button class="scroll-to-top" aria-label="Прокрутить вверх">
+            <!-- ЗАМЕНИТЕ ЭТОТ ПУТЬ НА СВОЕ ИЗОБРАЖЕНИЕ -->
+            <img src="вверх.svg" alt="Наверх">
+        </button>
+    </div>
+</body>
+</html>
