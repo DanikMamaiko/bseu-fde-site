@@ -15,9 +15,16 @@
 		}
 
 		.container {
-			max-width: 1200px; 
 			width: 100%;
 		}
+
+		.inner-container {
+			max-width: 1200px;
+			width: 100%;
+			margin: 0 auto; /* Центрирует основной контент */
+			flex: 1; /* Позволяет этому блоку занимать всю доступную высоту, оставляя footer снизу */
+		}
+
 		
 		.contacts {
 			width: 254px;
@@ -25,7 +32,7 @@
 			top: 221px;
 			left: 120px;
 			font-family: Montserrat;
-			font-weight: 600px;
+			font-weight: 600;
 			font-size: 52px;
 			line-height: 101%;
 			letter-spacing: -3%;
@@ -37,20 +44,21 @@
 			display: flex;
 			justify-content: flex-start; 
 			gap: 180px;
+			margin-top: 100px;
 		}
 		
 		.deans p {
-			width: 67px;
+			width: 267px;
 			height: 22px;
 			top: 669px;
 			left: 120px;
 			font-family: Montserrat;
-			font-weight: 500px;
+			font-weight: 500;
 			font-size: 22px;
 			line-height: 101%;
 			letter-spacing: -3%;
 			vertical-align: middle;
-			color: background: #2E3146;
+			color: #2E3146;
 		}
 		
 		.dean-image {
@@ -62,12 +70,12 @@
 		}
 		
 		.dean-title p {
-			width: 559px;
+			width: 659px;
 			height: 28px;
 			top: 706px;
 			left: 120px;
 			font-family: Montserrat;
-			font-weight: 600px;
+			font-weight: 600;
 			font-size: 28px;
 			line-height: 101%;
 			letter-spacing: -3%;
@@ -75,7 +83,7 @@
 			color:  #0094FF;
 		}
 		
-		dean {
+		.dean {
 			
 		}
 		
@@ -95,7 +103,7 @@
 			top: 762px;
 			left: 458px;
 			font-family: Montserrat;
-			font-weight: 500px;
+			font-weight: 500;
 			font-size: 22px;
 			line-height: 101%;
 			letter-spacing: -3%;
@@ -109,7 +117,7 @@
 			top: 820px;
 			left: 120px;
 			font-family: Montserrat;
-			font-weight: 500px;
+			font-weight: 500;
 			font-size: 22px;
 			line-height: 101%;
 			letter-spacing: -3%;
@@ -129,91 +137,218 @@
 			letter-spacing: -3%;
 			vertical-align: middle;
 			color: #0094FF;
+			margin-top: 190px;
+			margin-bottom: 520px;
+		}
+
+		.location p {
+			margin: 0;
+			padding: 0;
+			margin-top: 110px;
 		}
 		
-		.location-image {
+		.dog {
+            font-family: Montserrat;
+            font-size: 250px; 
+            font-weight: bold;
+            background: linear-gradient(244.42deg, #007AFF 8.73%, #60C4F4 91.27%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+
+            position: absolute; 
+            width: 297.4px; 
+            height: 293.2px; 
+            top: 655.51px; 
+            left: 1157px;
+
+            transform: rotate(26.46deg); 
+            z-index: 999; 
+            pointer-events: all; 
+            transition: transform 0.9s ease-in-out; 
+        }
+
+        .rotate {
+            transform: rotate(340.46deg); /* Изменение угла вращения когда стоит класс .rotate */
+        }
+
+		#map {
 			width: 1200px;
 			height: 481px;
 			top: 1095px;
 			left: 120px;
 			background-color: #D9D9D9;
+			margin: 0;
+    		padding: 0;
 		}
-		
-		.dog {
+
+		.footer {
+            width: 100%;
+            height: 620px;
+            background: linear-gradient(97.19deg, #0094FF 0.78%, #005999 99.22%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+            color: white;
+            text-align: left;
 			font-family: Montserrat;
-			font-size: 250px; 
-			font-weight: bold;
-			background: linear-gradient(244.42deg, #007AFF 8.73%, #60C4F4 91.27%);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			display: inline-block;
-
-			position: absolute; 
-			width: 297.4px; /* Округлил, так как дробные px не критичны */
-			height: 303.2px; 
-			top: 505.51px; 
-			left: 1157px;
-
-			transform: rotate(26.46deg); 
-			z-index: 999; /* Поднимаем над всеми элементами */
-			pointer-events: none; /* Чтобы элемент не мешал кликам */
+        }
+        .footer-container {
+            width: 1203px;
+            height: 404px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 30px;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* Уменьшены отступы */
+        }
+        .footer-column h3 {
+            font-weight: 600;
+            font-size: 25px;
+            color: white;
+        }
+        .footer-column p, .footer-column a {
+            font-weight: 500;
+            font-size: 22px;
+            text-decoration: none;
+            color: white;
+        }
+        .footer-bottom {
+            text-align: center;
+            font-weight: 500;
+            font-size: 22px;
+            color: white;
+            margin-top: 30px;
+        }
+		.footer-column-1 {
+			width: 385px;
+			margin-left: 20px; 
+		}
+		/*.footer-column-2 {
+			width: 385px;
+			margin-left: 630px; 
+		} */
+		.footer-column-3 {
+			width: 385px;
 		}
 
     </style>
+
+	<script src="https://api-maps.yandex.ru/2.1/?apikey=7e90496e-4be9-4e0f-9a55-134d8eb63517&lang=ru_RU" type="text/javascript"></script>
+	<script type="text/javascript">
+		ymaps.ready(init);
+		function init() {
+			var myMap = new ymaps.Map("map", {
+				center: [53.878697, 27.606953], 
+				zoom: 15
+			});
+
+			var myPlacemark = new ymaps.Placemark([53.878697, 27.606953], {
+				balloonContent: 'г. Минск, пр. Партизанский 26'
+			});
+
+			myMap.geoObjects.add(myPlacemark);
+		}
+
+		document.addEventListener('DOMContentLoaded', function() {
+            var dogElement = document.querySelector('.dog');
+
+            dogElement.addEventListener('mouseenter', function() {
+                dogElement.classList.add('rotate');
+            });
+
+            dogElement.addEventListener('mouseleave', function() {
+                dogElement.classList.remove('rotate');
+            });
+        });
+	</script>
 </head>
 
 	<body>
 		
 		<div class="container"> 
-			<div class="contacts">
-				<p>Контакты</p>
-			</div>
-			
-			<div class="deans">
-				<div class="dean">
-					<div class="dean-image">
-						<img src="" alt="">
+			<div class="inner-container">
+				<div class="contacts">
+					<p>Контакты</p>
+				</div>
+				
+				<div class="deans">
+					<div class="dean">
+						<div class="dean-image">
+							<img src="" alt="">
+						</div>
+						<p>декан</p>
+						<div class="dean-title">
+							<p>Майоровская Светлана Владимировна</p>
+						</div>
 					</div>
-					<p>декан</p>
-					<div class="dean-title">
-						<p>Майоровская Светлана Владимировна</p>
+					
+					<div class="zamdean">
+						<div class="dean-image">
+							<img src="" alt="">
+						</div>
+						<p>заместитель декана</p>
+						<div class="dean-title">
+							<p>Прыгун Ирина Владимировна</p>
+						</div>
 					</div>
 				</div>
 				
-				<div class="zamdean">
-					<div class="dean-image">
-						<img src="" alt="">
-					</div>
-					<p>заместитель декана</p>
-					<div class="dean-title">
-						<p>Прыгун Ирина Владимировна</p>
-					</div>
+				<div class="address">
+				
+					<p>+375(**) 209-52-45</p>
+					<p>fdebseu@gmail.com</p>
+				
+				</div>
+				
+				<div class="address-title">
+						<p>220070, г. Минск, пр. Партизанский 26,<br>корпус 1, ауд. 120*</p>
+				</div>
+				
+				<div class="dog">@</div>
+				
+				<div class="location">
+					<p>Как добраться</p>
+					<div id="map"></div>
 				</div>
 			</div>
-			
-			<div class="address">
-			
-				<p>+375(**) 209-52-45</p>
-				<p>fdebseu@gmail.com</p>
-			
-			</div>
-			
-			<div class="address-title">
-					<p>220070, г. Минск, пр. Партизанский 26,<br>корпус 1, ауд. 120*</p>
-			</div>
-			
-			<div class="dog">@</div>
-
-			
-			
-			<div class="location">
-				<p>Как добраться</p>
-				<div class="location-image">
-						<img src="location.png" alt="">
+			<div class="footer">
+				<div class="footer-container">
+					<div class="footer-content">
+						<div class="footer-column footer-column-1">
+							<p>Если у Вас возникли вопросы, обращайтесь по адресу <strong>fde@bseu.by</strong></p>
+							<div style="width: 186px; height: 181px; background: white;"></div>
+							<p>Если есть предложения, можете написать нам</p>
+						</div>
+						<div class="footer-column footer-column-2">
+							<h3>Ссылки</h3>
+							<a href="#">О факультете</a>
+							<a href="#">Студенту</a>
+							<a href="#">Абитуриенту</a>
+							<a href="#">Наука</a>
+							<a href="#">Кафедры</a>
+							<a href="#">Карта сайта</a>
+						</div>
+						<div class="footer-column footer-column-3">
+							<h3>Контакты</h3>
+							<p>+375(**) 209-52-45</p>
+							<p>fdebseu@gmail.com</p>
+							<p>220070, г. Минск, пр. Партизанский 26, корпус 1, ауд. 120</p>
+						</div>
 					</div>
+					<div class="footer-bottom">© 2019-2025 БГЭУ ФЦЭ</div>
 				</div>
 			</div>
 		</div>
-		
 	</body>
 </html>
