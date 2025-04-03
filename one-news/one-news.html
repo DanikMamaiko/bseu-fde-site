@@ -4,12 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мозгобойня</title>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="style.css">
     <style>
-		  /* ================= HEADER ================= */
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: Montserrat;
             margin: 0;
             padding: 0;
             display: flex;
@@ -18,87 +17,83 @@
             background: white;
         }
 		
-		.header {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			width: 1200px;
-			padding: 20px 0;
-			margin-top: 51px;
-		}
-		
-		.nav {
-			display: flex;
-			gap: 40px;
-		}
-
-		.nav a {
-			font-weight: 600;
-			font-size: 18px;
-			line-height: 101%;
-			letter-spacing: -3%;
-			text-decoration: none;
-			color: black;
-			text-align: center;
-			color: #007AFF;
-		}
-
-		.nav a:hover {
-			color: black;
-		}
-
-		.logo img {
-			width: 144px;
-			height: 38px;
-		}
-		
-		  /* ================= CONTENT ================= */
-        .container {
+		/* ================= CONTENT ================= */
+        body {
+            margin: 0;
+            padding: 0;
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            width: 1200px;
-        }
+            justify-content: center; 
+		}
+
+		.container {
+			width: 100%;
+		}
+
+		.inner-container {
+			max-width: 1200px;
+			width: 100%;
+			margin: 0 auto; 
+			flex: 1; 
+            margin-left: 250px;
+            box-sizing: border-box;
+            margin-top: 40px;
+		}
+
         .title {
+            width: 1200px;
+            height: 106px;
+            top: 221px;
+            left: 120px;
+            font-family: Montserrat;
             font-weight: 600;
             font-size: 52px;
             line-height: 101%;
             letter-spacing: -3%;
-            text-align: left;
-            width: 1200px;
-            height: 106px;
-            margin-top: 51px;
+            vertical-align: middle;
+            color: #2E3146;
         }
+
         .date {
+            width: 367px;
+            height: 25px;
+            margin-top: 20px;
+            top: 347px;
+            left: 119px;
+            font-family: Montserrat;
             font-weight: 500;
-            font-size: 28px;
+            font-size: 25px;
             line-height: 101%;
             letter-spacing: -3%;
-            text-align: left;
-            width: 287px;
-            height: 28px;
-            margin-top: 34px;
+            vertical-align: middle;
+            color: #2E3146;
         }
-		
+
         .content-container {
-			display: flex;
-			align-items: flex-start;
-			justify-content: space-between;
-			width: 1200px;
-			margin-top: 34px;
-			flex-direction: row-reverse;
-		}
-		
+            display: flex; 
+            gap: 20px; 
+            margin-top: 50px;
+        }
+
+        .image {
+            flex: 0 0 auto; 
+        }
+
         .description {
+            flex: 1;
+            width: 588;
+            height: 547;
+            top: 423px;
+            left: 730px;
+            font-family: Montserrat;
             font-weight: 400;
             font-size: 25px;
             line-height: 101%;
             letter-spacing: -3%;
-            text-align: left;
-            width: 588px;
-            height: 547px;
+            vertical-align: middle;
+            color: #2E3146;
+            text-align: justify;
         }
-		
+
         .image img {
             width: 591px;
             height: 443px;
@@ -108,7 +103,9 @@
         .buttons {
             display: flex;
             align-items: center;
+            justify-content: center;
             margin-top: 70px;
+            font-family: Montserrat;
         }
 		
         .button {
@@ -148,136 +145,197 @@
         }
 		
 		/* ================= FOOTER ================= */
-		
+        .underlined {
+			text-decoration: underline;
+		}
+
 		.footer {
-            width: 1440px;
-            height: 620px;
-            background: linear-gradient(97.19deg, #0094FF 0.78%, #005999 99.22%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 50px;
-            color: white;
-            text-align: left;
-        }
-        .footer-container {
-            width: 1203px;
-            height: 404px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 30px;
-        }
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-        }
-        .footer-column {
-            display: flex;
-            flex-direction: column;
-            gap: 10px; /* Уменьшены отступы */
-        }
-        .footer-column h3 {
-            font-weight: 600;
-            font-size: 25px;
-            color: white;
-        }
-        .footer-column p, .footer-column a {
-            font-weight: 500;
-            font-size: 22px;
-            text-decoration: none;
-            color: white;
-        }
-        .footer-bottom {
-            text-align: center;
-            font-weight: 500;
-            font-size: 22px;
-            color: white;
-            margin-top: 30px;
-        }
+			width: 100%;
+			height: 520px;
+			background: linear-gradient(97.19deg, #0094FF 0.78%, #005999 99.22%);
+			display: flex;
+			justify-content: center;
+			align-items: flex-start;
+			margin-top: 73px;
+			color: white;
+			text-align: left;
+			font-family: Montserrat;
+		}
+		
+		.footer-container {
+			width: 100%;
+			height: 404px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			padding: 10px;
+		}
+
+		.footer-content {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			margin-top: 54px;
+		}
+
+		.footer-column {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
 		.footer-column-1 {
 			width: 385px;
-			margin-left: 20px; 
+			margin-left: 120px; 
+			display: flex;
+			flex-direction: column;
 		}
-		/*.footer-column-2 {
+
+		.footer-column-1 p {
+			font-weight: 500;
+			font-size: 22px;
+			text-decoration: none;
+			color: white;
+			margin: 5px 0; 
+			letter-spacing: -0.66px;
+		}
+
+		.footer-column-2 {
 			width: 385px;
-			margin-left: 630px; 
-		} */
+			margin-left: 205px; 
+			display: flex;
+			flex-direction: column;
+		} 
+
+		.footer-column-2 p {
+			margin-top: 0;
+			margin-bottom: 30px; 
+			display: block; 
+			font-weight: 500;
+			text-decoration: underline;
+			color: #FFF;
+			font-family: Montserrat;
+			font-size: 25px;
+			font-style: normal;
+			font-weight: 600;
+			line-height: 101.336%; 
+			letter-spacing: -0.75px;
+		}
+
+		.footer-column-2 a {
+			margin-bottom: 25px; 
+			display: block; 
+			font-weight: 500;
+			font-size: 22px;
+			text-decoration: none;
+			color: white;
+			letter-spacing: -0.66px;
+		}
+
 		.footer-column-3 {
-			width: 385px;
+			margin-right: 120px; 
+			width: 305px;
+			display: flex;
+			flex-direction: column;
 		}
-    </style>
+
+		.footer-column-3 h3 {
+			margin-top: 0;
+			margin-bottom: 25px; 
+			font-weight: 600;
+			font-size: 25px;
+			color: white;
+			text-decoration: underline;
+		}
+
+		.footer-column-3 p {
+			margin-top: 0;
+			margin-bottom: 30px; 
+			font-weight: 500;
+			font-size: 22px;
+			color: white;
+			text-decoration: none;
+			letter-spacing: -0.66px;
+		}
+
+		.footer-bottom {
+			text-align: center;
+			font-weight: 500;
+			font-size: 22px;
+			color: white;
+			margin-top: 30px;
+		}
     </style>
 </head>
 <body>
-	<header class="header">
-        <div class="logo">
-            <img src="blue-logo-fde.png" alt="Логотип ФЦЭ">
-        </div>
-        <nav class="nav">
-            <a href="#">О факультете</a>
-            <a href="#">Студенту</a>
-            <a href="#">Абитуриенту</a>
-            <a href="#">Наука</a>
-            <a href="#">Кафедры</a>
-        </nav>
-    </header>
-	
     <div class="container">
-        <div class="title">На ФЦЭ прошла долгожданная мозгобойня "Каждый день как праздник"</div>
-        <div class="date">17 марта 2025</div>
-    </div>
-    
-    <div class="content-container">
-        <div class="description">
-            13 марта на ФЦЭ прошла долгожданная мозгобойня "Каждый день праздник"!<br>
-            Ребята воспользовались возможностью проверить свои знания во многих сферах: от Всемирного женского дня (8 марта) до дня выхода человека в открытый космос (18 марта) и театра (27 марта).<br>
-            И, конечно же, победители не ушли без призов, отличного настроения, заевших в голове песен после музыкальной паузы и уставшего от смеха живота!<br><br>
-            Места распределились так:<br>
-            1 место — "Экспертная система"<br>
-            2 место — "ДЦКАНЫ"<br>
-            3 место — "Пэкмэки"<br><br>
-            Ждем вас на наших следующих мероприятиях и безмерно благодарим за атмосферу на этой мозгобойне!<br><br>
-            С любовью, Студсовет и Профбюро ФЦЭ
-        </div>
-        <div class="image">
-            <img src="news.jfif" alt="Мозгобойня">
-        </div>
-    </div>
-    
-    <div class="buttons">
-        <a href="https://www.instagram.com" class="button large">Узнать больше</a>
-        <a href="https://t.me" class="button small"><img src="telegram.png" alt="Telegram"></a>
-        <a href="https://www.instagram.com" class="button small"><img src="instagram.png" alt="Instagram"></a>
-    </div>
-	
-	<footer class="footer">
-        <div class="footer-container">
-            <div class="footer-content">
-                <div class="footer-column footer-column-1">
-                    <p>Если у Вас возникли вопросы, обращайтесь по адресу <strong>fde@bseu.by</strong></p>
-                    <div style="width: 186px; height: 181px; background: white;"></div>
-                    <p>Если есть предложения, можете написать нам</p>
+        <div class="inner-container">
+            <div class="news-title">
+                <div class="title">На ФЦЭ прошла долгожданная мозгобойня "Каждый день как праздник"</div>
+                <div class="date">17 марта 2025</div>
+            </div>
+        
+            <div class="content-container">
+                <div class="image">
+                    <img src="news.jfif" alt="Мозгобойня">
                 </div>
-                <div class="footer-column footer-column-2">
-                    <h3>Ссылки</h3>
-                    <a href="#">О факультете</a>
-                    <a href="#">Студенту</a>
-                    <a href="#">Абитуриенту</a>
-                    <a href="#">Наука</a>
-                    <a href="#">Кафедры</a>
-                    <a href="#">Карта сайта</a>
-                </div>
-                <div class="footer-column footer-column-3">
-                    <h3>Контакты</h3>
-                    <p>+375(**) 209-52-45</p>
-                    <p>fdebseu@gmail.com</p>
-                    <p>220070, г. Минск, пр. Партизанский 26, корпус 1, ауд. 120</p>
+
+                <div class="description">
+                    13 марта на ФЦЭ прошла долгожданная мозгобойня "Каждый день праздник"!<br>
+                    Ребята воспользовались возможностью проверить свои знания во многих сферах: от Всемирного женского дня (8 марта) до дня выхода человека в открытый космос (18 марта) и театра (27 марта).<br>
+                    И, конечно же, победители не ушли без призов, отличного настроения, заевших в голове песен после музыкальной паузы и уставшего от смеха живота!<br><br>
+                    Места распределились так:<br>
+                    1 место — "Экспертная система"<br>
+                    2 место — "ДЦКАНЫ"<br>
+                    3 место — "Пэкмэки"<br><br>
+                    Ждем вас на наших следующих мероприятиях и безмерно благодарим за атмосферу на этой мозгобойне!<br><br>
+                    С любовью, Студсовет и Профбюро ФЦЭ
                 </div>
             </div>
-            <div class="footer-bottom">© 2019-2025 БГЭУ ФЦЭ</div>
+            
+            <div class="buttons">
+                <a href="https://www.instagram.com" class="button large">Узнать больше</a>
+                <a href="https://t.me" class="button small"><img src="telegram.png" alt="Telegram"></a>
+                <a href="https://www.instagram.com" class="button small"><img src="instagram.png" alt="Instagram"></a>
+            </div>
         </div>
-    </footer>
+
+        <div class="footer">
+            <div class="footer-container">
+                <div class="footer-content">
+
+                    <div class="footer-column-1">
+                        <div class="footer-column">
+                            <p><span class="underlined">Если у Вас возникли вопросы, обращайтесь по адресу</span> <strong>fde@bseu.by</strong></p>
+                            <div style="width: 186px; height: 181px; background: white;"></div>
+                            <p>Если есть предложения, можете написать нам</p>
+                        </div>
+                    </div>
+
+                    <div class="footer-column-2">
+                        <div class="footer-column">
+                            <p>Ссылки</p>
+                            <a href="#">О факультете</a>
+                            <a href="#">Студенту</a>
+                            <a href="#">Абитуриенту</a>
+                            <a href="#">Наука</a>
+                            <a href="#">Кафедры</a>
+                            <a href="#">Карта сайта</a>
+                        </div>
+                    </div>
+
+                    <div class="footer-column-3">
+                        <div class="footer-column">
+                            <h3>Контакты</h3> 
+                            <p>+375(**) 209-52-45</p>
+                            <p>fdebseu@gmail.com</p>
+                            <p>220070, г. Минск, пр. Партизанский 26,</br> корпус 1, ауд. 120</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">© 2019-2025 БГЭУ ФЦЭ</div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
