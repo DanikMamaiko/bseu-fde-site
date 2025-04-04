@@ -18,11 +18,199 @@
 			width: 100%;
 		}
 
+		.logo {
+            position: absolute;
+            z-index: 100;
+        }
+
+        .title {
+            color: #FFF;
+            font-weight: 600;
+            position: absolute;
+        }
+
+        .desktop-header-wrapper {
+            width: 100%;
+            padding: 0 calc((100% - 1200px) / 2);
+            position: relative;
+			margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .desktop-header-container {
+            width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            height: 150px;
+        }
+
+        .desktop-logo {
+            top: 76px;
+            left: 0;
+            width: 127px;
+            height: 51px;
+        }
+
+        .desktop-menu {
+            position: absolute;
+            top: 70px;
+            left: 300px;
+            display: flex;
+            align-items: center;
+        }
+
+        .desktop-menu-item {
+            position: relative;
+            margin-right: 59px;
+        }
+
+        .desktop-menu-item:last-child {
+            margin-right: 0;
+        }
+
+        .desktop-menu a {
+            color: #007AFF;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            display: block;
+            padding: 10px 0;
+            transition: color 0.2s;
+            white-space: nowrap;    
+        }
+
+        .desktop-menu a:hover {
+            color: #0066cc;
+        }
+
+        .desktop-submenu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 566px;
+            height: 253px;
+            background: #EEEEEE;
+            box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+            display: none;
+            flex-direction: row;
+            z-index: 1000;
+        }
+
+        .desktop-menu-item:nth-last-child(2) .desktop-submenu,
+        .desktop-menu-item:nth-last-child(1) .desktop-submenu {
+            left: auto;
+            right: 0;
+            transform: none;
+        }
+
+        .desktop-menu-item:hover .desktop-submenu {
+            display: flex;
+        }
+
+        .submenu-column {
+            width: 50%;
+            padding: 30px;
+            position: relative;
+        }
+
+        .submenu-column.right {
+            background: white;
+        }
+
+        .submenu-item {
+            margin-bottom: 20px;
+            color: black;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 16.21px;
+            cursor: pointer;
+        }
+
+        .submenu-item:hover {
+            color: #0066cc;
+        }
+
+        .submenu-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .submenu-description {
+            color: #565656;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 14.19px;
+            margin-top: 5px;
+        }
+
+        .language-switcher {
+			position: relative;
+			margin-left: 59px;
+		}
+
+		.desktop-language-icon {
+			width: 35px;
+			height: 35px;
+			background-image: url('images/languageicon.png');
+			background-size: cover;
+			background-repeat: no-repeat;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.language-dropdown {
+			position: absolute;
+			top: calc(100% + 10px);
+			right: 0;
+			width: 107px;
+			height: 158px;
+			display: none; 
+			z-index: 1000;
+		}
+
+		.language-switcher:hover .language-dropdown {
+			display: block;
+		}
+
+		.language-dropdown-content {
+			width: 100%;
+			height: 100%;
+			background: #565656(173, 216, 230, 0.95); 
+			box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+			backdrop-filter: blur(5px);
+			border-radius: 4px;
+			overflow: hidden;
+			white-space: nowrap; 
+		}
+
+		.language-dropdown-item {
+			padding: 12px 30px;
+			color: black;
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 16.21px;
+			cursor: pointer;
+			position: relative;
+			box-sizing: border-box;
+			width: 100%;
+		}
+
+		.language-dropdown-item:hover,
+		.language-dropdown-item.active {
+			background: rgba(173, 216, 230, 1); 
+		}
+
 		.inner-container {
 			max-width: 1200px;
 			width: 100%;
 			margin: 0 auto; 
 			flex: 1; 
+			margin-top: 100px;
 		}
 
 		.contacts {
@@ -93,7 +281,7 @@
 		.address {
 			display: flex;
 			justify-content: flex-start; 
-			gap: 200px;
+			gap: 135px;
 		}
 		
 		.address p {
@@ -158,7 +346,7 @@
             position: absolute; 
             width: 297.4px; 
             height: 293.2px; 
-            top: 655.51px; 
+            top: 805.51px; 
             left: 1157px;
 
             transform: rotate(26.46deg); 
@@ -297,10 +485,14 @@
 
 		.footer-bottom {
 			text-align: center;
-			font-weight: 500;
-			font-size: 22px;
-			color: white;
 			margin-top: 30px;
+			color: #FFF;
+			font-family: Montserrat;
+			font-size: 22px;
+			font-style: normal;
+			font-weight: 500;
+			line-height: 101.336%; 
+			letter-spacing: -0.66px;
 		}
     </style>
 
@@ -337,6 +529,97 @@
 	<body>
 		
 		<div class="container"> 
+
+			<div class="desktop-header-wrapper">
+				<div class="desktop-header-container">
+					<img src="images/logo.png" alt="Логотип" class="logo desktop-logo">
+					<div class="desktop-menu">
+						<div class="desktop-menu-item">
+							<a href="#">О факультете</a>
+							<div class="desktop-submenu">
+								<div class="submenu-column">
+									<div class="submenu-item">История</div>
+									<div class="submenu-item">Деканат</div>
+									<div class="submenu-item">Студсовет</div>
+									<div class="submenu-item">Профбюро</div>
+									<div class="submenu-item">БРМС</div>
+								</div>
+								<div class="submenu-column right">
+									<div class="submenu-title">Факультет Цифровой Экономики</div>
+									<div class="submenu-description">Мы лучшие!</div>
+								</div>
+							</div>
+						</div>
+						<div class="desktop-menu-item">
+							<a href="#">Студенту</a>
+							<div class="desktop-submenu">
+								<div class="submenu-column">
+									<div class="submenu-item">Расписание</div>
+									<div class="submenu-item">Учебные материалы</div>
+									<div class="submenu-item">Стипендии</div>
+								</div>
+								<div class="submenu-column right">
+									<div class="submenu-title">Для студентов</div>
+									<div class="submenu-description">Все необходимое для учебы</div>
+								</div>
+							</div>
+						</div>
+						<div class="desktop-menu-item">
+							<a href="#">Абитуриенту</a>
+							<div class="desktop-submenu">
+								<div class="submenu-column">
+									<div class="submenu-item">Правила приема</div>
+									<div class="submenu-item">Подготовительные курсы</div>
+									<div class="submenu-item">Дни открытых дверей</div>
+								</div>
+								<div class="submenu-column right">
+									<div class="submenu-title">Для абитуриентов</div>
+									<div class="submenu-description">Всё о поступлении</div>
+								</div>
+							</div>
+						</div>
+						<div class="desktop-menu-item">
+							<a href="#">Наука</a>
+							<div class="desktop-submenu">
+								<div class="submenu-column">
+									<div class="submenu-item">Научные направления</div>
+									<div class="submenu-item">Конференции</div>
+									<div class="submenu-item">Публикации</div>
+								</div>
+								<div class="submenu-column right">
+									<div class="submenu-title">Научная деятельность</div>
+									<div class="submenu-description">Исследования и разработки</div>
+								</div>
+							</div>
+						</div>
+						<div class="desktop-menu-item">
+							<a href="#">Кафедры</a>
+							<div class="desktop-submenu">
+								<div class="submenu-column">
+									<div class="submenu-item">Экономическая информатика</div>
+									
+								</div>
+								<div class="submenu-column right">
+									<div class="submenu-title">Наши кафедры</div>
+									<div class="submenu-description">Профессиональное образование</div>
+								</div>
+							</div>
+						</div>
+						<div class="language-switcher">
+							<div class="desktop-language-icon" id="desktopLanguageIcon"></div>
+							<div class="language-dropdown" id="languageDropdown">
+								<div class="language-dropdown-content">
+									<div class="language-dropdown-item active">Рус 🇷🇺</div>
+									<div class="language-dropdown-item">Бел 🇧🇾</div>
+									<div class="language-dropdown-item">En 🇬🇧</div>
+									<div class="language-dropdown-item">Ch 🇨🇳</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
 			<div class="inner-container">
 				<div class="contacts">
 					<p>Контакты</p>
@@ -420,5 +703,74 @@
 				</div>
 			</div>
 		</div>
+
+		<script>
+			document.addEventListener('DOMContentLoaded', function() {
+				// Переключение языка в десктопной версии
+				const desktopLanguageIcon = document.getElementById('desktopLanguageIcon');
+				const languageDropdown = document.getElementById('languageDropdown');
+				const languageItems = document.querySelectorAll('.language-dropdown-item');
+				
+				if (desktopLanguageIcon) {
+					desktopLanguageIcon.addEventListener('click', function(e) {
+						e.stopPropagation();
+						languageDropdown.style.display = languageDropdown.style.display === 'block' ? 'none' : 'block';
+					});
+					
+					languageItems.forEach(item => {
+						item.addEventListener('click', function() {
+							languageItems.forEach(opt => opt.classList.remove('active'));
+							this.classList.add('active');
+							languageDropdown.style.display = 'none';
+						});
+					});
+					
+					document.addEventListener('click', function(e) {
+						if (!e.target.closest('.language-switcher')) {
+							languageDropdown.style.display = 'none';
+						}
+					});
+				}
+	
+				// Мобильные функции
+				const burgerMenu = document.querySelector('.burger-menu');
+				const sideMenu = document.querySelector('.side-menu');
+				const overlay = document.querySelector('.overlay');
+				const menuItems = document.querySelectorAll('.menu-item');
+	
+				if (burgerMenu) {
+					burgerMenu.addEventListener('click', function(e) {
+						e.stopPropagation();
+						this.classList.toggle('active');
+						sideMenu.classList.toggle('active');
+						overlay.classList.toggle('active');
+						document.body.style.overflow = sideMenu.classList.contains('active') ? 'hidden' : '';
+					});
+	
+					overlay.addEventListener('click', function() {
+						burgerMenu.classList.remove('active');
+						sideMenu.classList.remove('active');
+						this.classList.remove('active');
+						document.body.style.overflow = '';
+					});
+	
+					menuItems.forEach(item => {
+						const title = item.querySelector('.menu-title');
+						title.addEventListener('click', () => {
+							const isActive = item.classList.contains('active');
+							menuItems.forEach(i => i.classList.remove('active'));
+							if (!isActive) item.classList.add('active');
+						});
+					});
+	
+					const mobileLanguageIcon = document.getElementById('mobileLanguageIcon');
+					if (mobileLanguageIcon) {
+						mobileLanguageIcon.addEventListener('click', function() {
+							alert('Язык изменен (мобильная версия)');
+						});
+					}
+				}
+			});
+		</script>
 	</body>
 </html>
