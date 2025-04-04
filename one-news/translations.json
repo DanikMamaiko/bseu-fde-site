@@ -1,0 +1,24 @@
+{
+    "translations": {
+      "ru": {
+        "brainstorm-title": "На ФЦЭ прошла долгожданная мозгобойня \"Каждый день как праздник\"",
+        "brainstorm-date": "17 марта 2025",
+        "learn-more": "Узнать больше"
+      },
+      "be": {
+        "brainstorm-title": "На ФЦЭ адбылася доўгачаканая \"Мозгабойня\"",
+        "brainstorm-date": "17 сакавіка 2025",
+        "learn-more": "Даведацца больш"
+      },
+      "en": {
+        "brainstorm-title": "Faculty of Digital Economics hosted the long-awaited \"Brain Battle\"",
+        "brainstorm-date": "March 17, 2025",
+        "learn-more": "Learn more"
+      },
+      "zh": {
+        "brainstorm-title": "数字经济学院举办了期待已久的\"脑力大战\"",
+        "brainstorm-date": "2025年3月17日",
+        "learn-more": "了解更多"
+      }
+    }
+  }

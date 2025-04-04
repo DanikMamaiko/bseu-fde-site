@@ -540,8 +540,8 @@
         
         <div class="inner-container">
             <div class="news-title">
-                <div class="inner-title">На ФЦЭ прошла долгожданная мозгобойня "Каждый день как праздник"</div>
-                <div class="date">17 марта 2025</div>
+                <div class="inner-title" data-translate="brainstorm-title">На ФЦЭ прошла долгожданная мозгобойня "Каждый день как праздник"</div>
+                <div class="date" data-translate="brainstorm-date">17 марта 2025</div>
             </div>
         
             <div class="content-container">
@@ -613,6 +613,38 @@
             const desktopLanguageIcon = document.getElementById('desktopLanguageIcon');
             const languageDropdown = document.getElementById('languageDropdown');
             const languageItems = document.querySelectorAll('.language-dropdown-item');
+
+            const translations = {
+                'ru': {
+                    'brainstorm-title': 'На ФЦЭ прошла долгожданная мозгобойня "Каждый день как праздник"',
+                    'brainstorm-date': '17 марта 2025',
+                    'brainstorm-content': `13 марта на ФЦЭ прошла долгожданная мозгобойня "Каждый день праздник"!<br>
+                        Ребята воспользовались возможностью проверить свои знания во многих сферах...`,
+                    'learn-more': 'Узнать больше',
+                    // Добавьте остальные тексты
+                },
+                'be': {
+                    'brainstorm-title': 'На ФЦЭ адбылася доўгачаканая "Мозгабойня"',
+                    'brainstorm-date': '17 сакавіка 2025',
+                    'brainstorm-content': `13 сакавіка на ФЦЭ адбылася доўгачаканая "Мозгабойня"...`,
+                    'learn-more': 'Даведацца больш',
+                    // Добавьте остальные тексты
+                },
+                'en': {
+                    'brainstorm-title': 'Faculty of Digital Economics hosted the long-awaited "Brain Battle"',
+                    'brainstorm-date': 'March 17, 2025',
+                    'brainstorm-content': `On March 13, the Faculty of Digital Economics hosted the long-awaited "Brain Battle"...`,
+                    'learn-more': 'Learn more',
+                    // Добавьте остальные тексты
+                },
+                'zh': {
+                    'brainstorm-title': '数字经济学院举办了期待已久的"脑力大战"',
+                    'brainstorm-date': '2025年3月17日',
+                    'brainstorm-content': `3月13日，数字经济学院举办了期待已久的"脑力大战"...`,
+                    'learn-more': '了解更多',
+                    // Добавьте остальные тексты
+                }
+            };
             
             if (desktopLanguageIcon) {
                 desktopLanguageIcon.addEventListener('click', function(e) {
@@ -625,12 +657,61 @@
                         languageItems.forEach(opt => opt.classList.remove('active'));
                         this.classList.add('active');
                         languageDropdown.style.display = 'none';
+                        
+                        // Определяем выбранный язык
+                        let lang = 'ru';
+                        if (this.textContent.includes('Бел')) lang = 'be';
+                        if (this.textContent.includes('En')) lang = 'en';
+                        if (this.textContent.includes('Ch')) lang = 'zh';
+                        
+                        // Применяем переводы
+                        applyTranslations(lang);
+                        
+                        // Сохраняем выбор в localStorage
+                        localStorage.setItem('selectedLanguage', lang);
                     });
                 });
                 
                 document.addEventListener('click', function(e) {
                     if (!e.target.closest('.language-switcher')) {
                         languageDropdown.style.display = 'none';
+                    }
+                });
+
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Проверяем сохраненный язык
+                    const savedLang = localStorage.getItem('selectedLanguage') || 'ru';
+                    
+                    // Устанавливаем активный язык в переключателе
+                    const langItems = {
+                        'ru': 0,
+                        'be': 1,
+                        'en': 2,
+                        'zh': 3
+                    };
+                    languageItems[langItems[savedLang]].classList.add('active');
+                    
+                    // Применяем переводы
+                    applyTranslations(savedLang);
+                    
+                    // Остальной код инициализации...
+                });
+            }
+
+            function applyTranslations(lang) {
+                const langData = translations[lang];
+                
+                // Находим все элементы с data-translate
+                const translatableElements = document.querySelectorAll('[data-translate]');
+                
+                translatableElements.forEach(el => {
+                    const key = el.getAttribute('data-translate');
+                    if (langData[key]) {
+                        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                            el.setAttribute('placeholder', langData[key]);
+                        } else {
+                            el.innerHTML = langData[key];
+                        }
                     }
                 });
             }
